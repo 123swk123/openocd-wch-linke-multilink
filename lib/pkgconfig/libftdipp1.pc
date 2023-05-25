@@ -1,0 +1,11 @@
+prefix=D:/papps/platforms/msys64/usr
+exec_prefix=D:/papps/platforms/msys64/usr/bin
+libdir=D:/papps/platforms/msys64/usr/bin
+includedir=D:/papps/platforms/msys64/usr/include/libftdi1
+
+Name: libftdipp1
+Description: C++ wrapper for libftdi1
+Requires: libftdi1
+Version: 1.5
+Libs: -L${libdir} -lftdipp1
+Cflags: -I${includedir}

@@ -1,0 +1,11 @@
+prefix=D:/papps/platforms/msys64/usr
+exec_prefix=D:/papps/platforms/msys64/usr/bin
+libdir=D:/papps/platforms/msys64/usr/bin
+includedir=D:/papps/platforms/msys64/usr/include/libftdi1
+
+Name: libftdi1
+Description: Library to program and control the FTDI USB controller
+Requires: libusb-1.0
+Version: 1.5
+Libs: -L${libdir} -lftdi1
+Cflags: -I${includedir}
