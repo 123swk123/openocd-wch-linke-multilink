@@ -53,3 +53,29 @@ lappend post_init_commands {
 
 *Note: Make sure for each openocd instance use differenct port numbers for telnet/tcl/gdb*
 ![image](https://github.com/123swk123/openocd-wch-linke-multilink/assets/903389/0c139b1d-18e1-4c95-84e1-1552219947e8)
+
+## To manually read Flash info
+
+*for example on ch32v003, run this from openocd bin dir*
+
+`openocd.exe -f .\wch-riscv.cfg -c 'wch_riscv.cpu.0 configure -event reset-end {flash probe 0}' -c init -c reset -c exit`
+```log
+Open On-Chip Debugger 0.11.0+dev-snapshot (2023-04-23-01:01)
+Licensed under GNU GPL v2
+For bug reports, read
+        http://openocd.org/doc/doxygen/bugs.html
+Info : only one transport option; autoselect 'sdi'
+Warn : Transport "sdi" was already selected
+{echo "Ready for Remote Connections"}
+Info : WCH-LinkE  mode:RV version 2.9
+Info : wlink_init ok
+Info : clock speed 6000 kHz
+Info : [wch_riscv.cpu.0] datacount=2 progbufsize=8
+Info : [wch_riscv.cpu.0] Examined RISC-V core; found 1 harts
+Info : [wch_riscv.cpu.0]  XLEN=32, misa=0x40800014
+[wch_riscv.cpu.0] Target successfully examined.
+Info : starting gdb server for wch_riscv.cpu.0 on 3333
+Info : Listening on port 3333 for gdb connections
+Info : device id = 0x83a7abcd
+Info : flash size = 16kbytes
+```
